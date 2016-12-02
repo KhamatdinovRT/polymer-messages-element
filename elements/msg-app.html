@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link href="../bower_components/polymer/polymer.html" rel="import">
+	<link href="../elements/msgs-element.html" rel="import">
+	<link href="../bower_components/paper-drawer-panel/paper-drawer-panel.html" rel="import">
+	<link href="../bower_components/paper-header-panel/paper-header-panel.html" rel="import">
+	<link href="../bower_components/paper-toolbar/paper-toolbar.html" rel="import">
+	<link href="../bower_components/paper-icon-button/paper-icon-button.html" rel="import">
+	<link href="../bower_components/paper-material/paper-material.html" rel="import">
+	<link href="../bower_components/paper-menu/paper-menu.html" rel="import">
+	<link href="../bower_components/paper-item/paper-item.html" rel="import">
+	<link href="../bower_components/paper-input/paper-input.html" rel="import">
+	<link href="../bower_components/iron-icons/iron-icons.html" rel="import">
+
+
+</head>
+
+<dom-module id="msg-app">
+	<style>
+		.list {
+			padding: 0;
+			/* 		border-right: 1px solid #ccc; */
+		}
+		
+		.list paper-item {
+			min-height: 80px;
+			border-bottom: 1px solid #dedede;
+			background-color: #fafafa;
+		}
+		
+		paper-input {
+			margin: 0 4vw;
+			padding: 0;
+		}
+		
+		paper-material {
+			background-color: #fff;
+			max-width: 640px;
+			width: 95%;
+			margin: 25px auto;
+			position: relative;
+		}
+		
+		paper-fab {
+			position: absolute;
+			background: #00BCD4;
+			bottom: 2vh;
+			right: 2vw;
+		}
+		
+		.main-panel {
+			background-color: #eee;
+			height: 100vh;
+			overflow-y: hidden;
+		}
+		
+		.task-empty paper-item {
+			text-align: center;
+			padding: 25px;
+			color: #6f6f6f;
+		}
+		
+		paper-toolbar {
+			background: #D32F2F;
+		}
+	</style>
+
+	<template>
+		<paper-drawer-panel>
+			<paper-header-panel class="side-panel" drawer>
+
+			</paper-header-panel>
+			<paper-header-panel main class="main-panel">
+				<paper-toolbar>
+				</paper-toolbar>
+				<msgs-element array="{{array}}"></msgs-element>
+			</paper-header-panel>
+		</paper-drawer-panel>
+	</template>
+</dom-module>
+
+<script>
+  // element registration
+  Polymer({
+    is: "msg-app",
+
+    // add properties and methods on the element's prototype
+    properties: {
+    	// declare properties for the element's public API
+		array:{
+			type:Array,
+			value: [
+				{
+					mainmessage:[
+						{
+							author: "Деканат ФМиИТ", 
+							datetime:"22.10.2016, 00:00:00", 
+							text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip", 
+						}
+					],
+					chatmessages:[
+						{
+							type: "self", 
+							author: "Студент",
+							datetime:"23.10.2016, 00:00:00",
+							text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip",
+						},
+						{
+							type: "self", 
+							author: "Студент",
+							datetime:"23.10.2016, 00:00:00",
+							text:"Lorem ipsum",
+						}
+					]
+				}
+			]
+		}
+    }
+  });
+</script>

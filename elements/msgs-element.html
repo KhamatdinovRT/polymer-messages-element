@@ -1,0 +1,68 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="shared-styles.html">
+<link rel="import" href="message.html">
+<link rel="import" href="../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../bower_components/paper-material/paper-material.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+
+<dom-module id="msgs-element">
+  <template>
+    <style include="shared-styles">
+
+    </style>
+    <template is="dom-repeat" items="{{array}}">
+      <div class="chat-container">
+        <div class="messages-area">
+          <template is="dom-repeat" items="{{item.mainmessage}}">
+            <div class="card">
+              <div class="header">
+                <ul class="clearfix">
+
+                  <li>[[item.author]]</li>
+                  <li>[[item.datetime]]</li>
+                </ul>
+              </div>
+              <p class="message-text">[[item.text]]</p>
+              <hr>
+            </div>
+          </template>
+
+          <div class="answers-area">
+            <template is="dom-repeat" items="{{item.chatmessages}}">
+              <div class$="card {{item.type}}">
+                <div class="header">
+                  <ul>
+                    <li>{{item.author}}</li>
+                    <li>{{item.datetime}}</li>
+                  </ul>
+                </div>
+                <p class="message-text">{{item.text}}</p>
+              </div>
+            </template>
+          </div>
+        </div>
+        <div id="chat-footer">
+          <paper-material id="input-group" elevation="2">
+            <paper-input id="message" label="Message"></paper-input>
+            <paper-button raised on-tap="addMessage">send</paper-button>
+          </paper-material>
+        </div>
+      </div>
+    </template>
+
+  </template>
+
+  <script>
+    Polymer({
+      is: 'msgs-element',
+      properties: {
+      },
+      addMessage: function(e) {
+       var model = e.model;
+      var text = document.querySelector('#message').value;
+       model.push('item.chatmessages', {type:"self", author: "Студент", datetime:  new Date().toLocaleString(), text: text });
+       document.querySelector('#message').value = "";
+    },
+    });
+  </script>
+</dom-module>
