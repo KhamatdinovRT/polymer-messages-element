@@ -16,8 +16,7 @@
           <template is="dom-repeat" items="{{item.mainmessage}}">
             <div class="card">
               <div class="header">
-                <ul class="clearfix">
-
+                <ul>
                   <li>[[item.author]]</li>
                   <li>[[item.datetime]]</li>
                 </ul>
@@ -52,17 +51,23 @@
 
   </template>
 
-  <script>
+<script>
     Polymer({
-      is: 'msgs-element',
-      properties: {
-      },
-      addMessage: function(e) {
-       var model = e.model;
-      var text = document.querySelector('#message').value;
-       model.push('item.chatmessages', {type:"self", author: "Студент", datetime:  new Date().toLocaleString(), text: text });
-       document.querySelector('#message').value = "";
-    },
+        is: 'msgs-element',
+        properties: {},
+        addMessage: function(e) {
+            var model = e.model;
+            var text = document.querySelector('#message').value;
+            model.push('item.chatmessages', {
+                type: "other",
+                author: "Студент",
+                datetime: new Date().toLocaleString(),
+                text: text
+            });
+            document.querySelector('#message').value = "";
+            // var objDiv = document.getElementById("#ad");
+            // objDiv.scrollTop = objDiv.scrollHeight;
+        },
     });
-  </script>
+</script>
 </dom-module>
