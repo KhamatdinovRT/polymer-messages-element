@@ -22,7 +22,11 @@
                 </ul>
               </div>
               <p class="message-text">[[item.text]]</p>
-              <hr>
+              <div class="attach">
+                <div class="attach-item">example.exe</div>
+                <div class="attach-item">example.exe</div>
+                <div class="attach-item">example.exe</div>
+              </div>
             </div>
           </template>
 
@@ -65,8 +69,6 @@
                 text: text
             });
             document.querySelector('#message').value = "";
-            var objDiv = document.getElementById("#ad");
-             objDiv.scrollTop = objDiv.scrollHeight;
         },
     });
 </script>
