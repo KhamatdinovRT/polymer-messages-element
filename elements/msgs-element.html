@@ -11,40 +11,42 @@
 
     </style>
     <template is="dom-repeat" items="{{array}}">
-      <div class="chat-container">
-        <div class="messages-area">
-          <template is="dom-repeat" items="{{item.mainmessage}}">
-            <div class="card">
-              <div class="header">
-                <ul>
-                  <li>[[item.author]]</li>
-                  <li>[[item.datetime]]</li>
-                </ul>
-              </div>
-              <p class="message-text">[[item.text]]</p>
-              <div class="attach">
-                <div class="attach-item">example.exe</div>
-                <div class="attach-item">example.exe</div>
-                <div class="attach-item">example.exe</div>
-              </div>
-            </div>
-          </template>
-
-          <div class="answers-area">
-            <template is="dom-repeat" items="{{item.chatmessages}}">
-              <div class$="card {{item.type}}">
+      <div class="row">
+        <div class="chat-container" class="col-sm-12 col-md-12">
+          <div class="messages-area ">
+            <template is="dom-repeat" items="{{item.mainmessage}}">
+              <div class="card col-sm-12 ">
                 <div class="header">
                   <ul>
-                    <li>{{item.author}}</li>
-                    <li>{{item.datetime}}</li>
+                    <li>[[item.author]]</li>
+                    <li>[[item.datetime]]</li>
                   </ul>
                 </div>
-                <p class="message-text">{{item.text}}</p>
+                <p class="message-text">[[item.text]]</p>
+                <div class="attach">
+                  <div class="attach-item">example.exe</div>
+                  <div class="attach-item">example.exe</div>
+                  <div class="attach-item">example.exe</div>
+                </div>
               </div>
             </template>
+            <div class="col-sm-offset-4">
+              <template is="dom-repeat" items="{{item.chatmessages}}">
+                <div class$="card {{item.type}} ">
+                  <div class="header">
+                    <ul>
+                      <li>{{item.author}}</li>
+                      <li>{{item.datetime}}</li>
+                    </ul>
+                  </div>
+                  <p class="message-text">{{item.text}}</p>
+                </div>
+            </div>
+            </template>
           </div>
+
         </div>
-        <div id="chat-footer">
+        <div id="chat-footer" class="col-sm-12">
           <paper-material id="input-group" elevation="2">
             <paper-input id="message" label="Message"></paper-input>
             <paper-button raised on-tap="addMessage">send</paper-button>
@@ -52,10 +54,9 @@
         </div>
       </div>
     </template>
-
   </template>
 
-<script>
+  <script>
     Polymer({
         is: 'msgs-element',
         properties: {},

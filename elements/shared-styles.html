@@ -13,6 +13,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <dom-module id="shared-styles">
     <template>
         <style>
+            body {
+                font-size: 15px!important;
+            }
+
+            .row {
+                margin: 0;
+            }
+            
             .card {
                 padding: 16px;
                 clear: both;
@@ -29,11 +37,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 height: calc(100% - 64px - 103px - 48px);
             }
             
-            .answers-area {
-                width: 70%;
-                margin-left: auto;
-            }
-            
             .other {
                 float: left;
                 max-width: 70%;
@@ -47,7 +50,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             .header {
                 margin: 0;
                 color: #616161;
-                font-size: 18px;
+                font-size: 15px;
                 font-weight: bold;
                 display: inline-block;
             }
@@ -61,6 +64,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 padding: 0;
                 margin: 0;
                 display: flex;
+                flex-wrap: wrap;
             }
             
             .header li+li {
@@ -86,10 +90,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 border-radius: 4px;
                 color: #515151;
                 margin: 0 5px 5px 5px;
-                cursor: pointer; 
+                cursor: pointer;
             }
-
-            .attach-item:hover{
+            
+            .attach-item:hover {
                 background: #ccc;
                 transition: 0.7s;
             }
