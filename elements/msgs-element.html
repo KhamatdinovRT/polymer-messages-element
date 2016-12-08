@@ -12,7 +12,7 @@
     </style>
     <template is="dom-repeat" items="{{array}}">
       <div class="row">
-        <div class="chat-container" class="col-sm-12 col-md-12">
+        <div class="chat-container" >
           <div class="messages-area ">
             <template is="dom-repeat" items="{{item.mainmessage}}">
               <div class="card col-sm-12 ">
@@ -30,7 +30,7 @@
                 </div>
               </div>
             </template>
-            <div class="col-sm-offset-4">
+            <div class="col-sm-offset-4 col-xs-offset-0">
               <template is="dom-repeat" items="{{item.chatmessages}}">
                 <div class$="card {{item.type}} ">
                   <div class="header">

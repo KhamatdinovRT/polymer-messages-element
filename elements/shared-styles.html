@@ -13,10 +13,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <dom-module id="shared-styles">
     <template>
         <style>
-            body {
-                font-size: 15px!important;
-            }
-
             .row {
                 margin: 0;
             }
@@ -35,6 +31,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 padding: 24px;
                 overflow-y: scroll;
                 height: calc(100% - 64px - 103px - 48px);
+                box-sizing: content-box;
             }
             
             .other {
@@ -73,7 +70,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             
             .message-text {
                 color: #515151;
-                font-size: 17px;
+                font-size: 15px;
                 margin: 16px 0;
             }
             
@@ -113,12 +110,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             
             #input-group {
                 display: flex;
-                margin: 0px 0px 10px 0;
+                margin: 0;
                 padding: 20px;
             }
             
             #chat-footer {
                 border-top: 1px solid #ccc;
+                padding: 0;
             }
         </style>
     </template>
