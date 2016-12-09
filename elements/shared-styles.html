@@ -30,7 +30,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             .messages-area {
                 padding: 24px;
                 overflow-y: scroll;
-                height: calc(100% - 64px - 103px - 48px);
+                height: calc(100% - 64px - 93px - 48px);
                 box-sizing: content-box;
             }
             
@@ -45,27 +45,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             }
             
             .header {
-                margin: 0;
                 color: #616161;
                 font-size: 15px;
                 font-weight: bold;
-                display: inline-block;
             }
             
             p {
                 word-wrap: break-word;
-            }
-            
-            .header ul {
-                list-style: none;
-                padding: 0;
-                margin: 0;
-                display: flex;
-                flex-wrap: wrap;
-            }
-            
-            .header li+li {
-                margin-left: 10px;
             }
             
             .message-text {
@@ -74,10 +60,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 margin: 16px 0;
             }
             
-            .attach {
+            .attach, .header {
                 display: flex;
                 margin: 0 -5px 0 -5px;
                 flex-wrap: wrap;
+            }
+            
+            .header-item {
+                margin: 0 5px;
             }
             
             .attach-item {
@@ -111,7 +101,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             #input-group {
                 display: flex;
                 margin: 0;
-                padding: 20px;
+                padding: 15px;
             }
             
             #chat-footer {

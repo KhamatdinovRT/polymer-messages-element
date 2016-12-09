@@ -12,15 +12,13 @@
     </style>
     <template is="dom-repeat" items="{{array}}">
       <div class="row">
-        <div class="chat-container" >
+        <div class="chat-container">
           <div class="messages-area ">
             <template is="dom-repeat" items="{{item.mainmessage}}">
               <div class="card col-sm-12 ">
                 <div class="header">
-                  <ul>
-                    <li>[[item.author]]</li>
-                    <li>[[item.datetime]]</li>
-                  </ul>
+                  <div class="header-item">[[item.author]]</div>
+                  <div class="header-item">[[item.datetime]]</div>
                 </div>
                 <p class="message-text">[[item.text]]</p>
                 <div class="attach">
@@ -34,10 +32,8 @@
               <template is="dom-repeat" items="{{item.chatmessages}}">
                 <div class$="card {{item.type}} ">
                   <div class="header">
-                    <ul>
-                      <li>{{item.author}}</li>
-                      <li>{{item.datetime}}</li>
-                    </ul>
+                    <div class="header-item">[[item.author]]</div>
+                    <div class="header-item">[[item.datetime]]</div>
                   </div>
                   <p class="message-text">{{item.text}}</p>
                 </div>
