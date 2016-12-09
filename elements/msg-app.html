@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<link href="../bower_components/polymer/polymer.html" rel="import">
 	<link href="../elements/msgs-element.html" rel="import">
@@ -12,22 +13,36 @@
 	<link href="../bower_components/paper-item/paper-item.html" rel="import">
 	<link href="../bower_components/paper-input/paper-input.html" rel="import">
 	<link href="../bower_components/iron-icons/iron-icons.html" rel="import">
-</head>
+	<!--<link rel="import" href="../bower_components/app-layout/app-drawer/app-drawer.html">
+	<link rel="import" href="../bower_components/app-layout/app-drawer/app-drawer.html">
+	<link rel="import" href="../bower_components/app-layout/app-drawer-layout/app-drawer-layout.html">-->
+	<link rel="import" href="../bower_components/app-layout/app-header/app-header.html">
+	<link rel="import" href="../bower_components/app-layout/app-header-layout/app-header-layout.html">
+	<link rel="import" href="../bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
+	<link rel="import" href="../bower_components/app-layout/app-toolbar/app-toolbar.html">
 
-<dom-module id="msg-app">
-	<style>
-	</style>
+	<dom-module id="msg-app">
+		<style>
+			app-header {
+				color: #fff;
+				background-color: #4285f4;
+			}
+		</style>
 
-	<template>
-			<paper-header-panel main>
-				<paper-toolbar>
-				</paper-toolbar>
+		<template>
+			<!-- Main content -->
+			<app-header-layout has-scrolling-region>
+				<app-header style="">
+					<app-toolbar>
+						<div main-title>My App</div>
+					</app-toolbar>
+				</app-header>
 				<msgs-element array="{{array}}"></msgs-element>
-			</paper-header-panel>
-	</template>
-</dom-module>
+			</app-header-layout>
+		</template>
+	</dom-module>
 
-<script>
+	<script>
   // element registration
   Polymer({
     is: "msg-app",
